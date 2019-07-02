@@ -7,4 +7,5 @@ https://docs.google.com/presentation/d/16I3l_Pi6Qrlluj__1NuttHIhhNmoQpr52I8KLnCm
 본 자료는 다음 Repository들을 참고하여 만들어졌습니다.
 
 https://github.com/MorvanZhou/Tensorflow-Tutorial
+
 https://github.com/Jaewan-Yun/optimizer-visualization
