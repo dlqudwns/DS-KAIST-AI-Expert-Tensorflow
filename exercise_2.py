@@ -34,14 +34,10 @@ ops = tf.no_op()
 ## x_assign_op, y_assign_op 정의하기 ##
 ######################################
 
-# x_grad = tf.gradients(cost, x_var)[0]
-# x_assign_op = tf.assign(x_var, x_var - LR * x_grad)
-# y_grad = tf.gradients(cost, y_var)[0]
-# y_assign_op = tf.assign(y_var, y_var - LR * y_grad)
 # ops = tf.group([x_assign_op, y_assign_op])
 
 # 혹은 아래 코드를 통해 간단하게 구현 가능
-ops = tf.train.GradientDescentOptimizer(LR).minimize(cost)
+# ops = tf.train.GradientDescentOptimizer(LR).minimize(cost)
 
 # 시각화 코드
 with tf.Session() as sess:
