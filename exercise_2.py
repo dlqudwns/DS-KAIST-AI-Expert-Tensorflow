@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
-from helper import initialize_plot
+from helper import initialize_plot_ex2
 
 # 비용 함수
 def cost_func(x=None, y=None):
@@ -10,7 +10,7 @@ def cost_func(x=None, y=None):
     z = -1 * tf.sin(x * x) * tf.cos(3 * y * y) * tf.exp(-(x * y) * (x * y)) - tf.exp(-(x + y) * (x + y))
     return x, y, z
 
-ax = initialize_plot(cost_func)
+ax = initialize_plot_ex2(cost_func)
 
 # 변수들 시작 지점
 x_0 = 0.75

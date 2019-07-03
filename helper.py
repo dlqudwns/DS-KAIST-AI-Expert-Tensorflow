@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 
-def initialize_plot(cost_func):
+def initialize_plot_ex2(cost_func):
     # pyplot settings
     plt.ion()
     fig = plt.figure(figsize=(3, 2), dpi=300)
@@ -44,3 +44,18 @@ def initialize_plot(cost_func):
 
     return ax
 
+def initialize_plot_ex3(y_fun, x, y):
+    plt.ion()
+    fig = plt.figure(figsize=(20, 10))
+    ax1 = fig.add_subplot(1, 2, 1)
+    ax2 = fig.add_subplot(1, 2, 2, projection='3d')
+    ax1.scatter(x, y, c='b')
+    a3D, b3D = np.meshgrid(np.linspace(-2, 7, 30), np.linspace(-2, 7, 30))  # 파라미터 공간
+    cost3D = np.array([np.mean(np.square(y_fun(a_, b_) - y))
+                       for a_, b_ in zip(a3D.flatten(), b3D.flatten())]).reshape(a3D.shape)  # 파라미터 공간에서의 비용함수 계산
+    ax2.plot_surface(
+        a3D, b3D, cost3D, rstride=1, cstride=1, cmap=plt.get_cmap('rainbow'), alpha=0.5)
+    ax2.set_xlabel('a')
+    ax2.set_ylabel('b')
+    plt.draw()
+    return ax1, ax2
